@@ -1,4 +1,4 @@
-import {BsFillMoonFill, BsGithub, BsSunFill} from "react-icons/bs";
+import {BsGithub} from "react-icons/bs";
 import React, {useEffect, useState} from "react";
 import {ImSun} from "react-icons/im";
 import {FiMoon} from "react-icons/fi";
@@ -13,7 +13,7 @@ const InfoBar = () => {
     return(
         <div className={"w-full flex justify-between text-2xl dark:text-white p-3 px-5"}>
             <div>
-                <BsGithub/>
+                <a href="https://github.com/prasadthx/ReactJS-IndexedDB-MusicPlayer-DexieJS"><BsGithub/></a>
             </div>
             <div className="cursor-pointer">
                 {theme === "dark" ? <FiMoon onClick={()=>toggleTheme(theme, setTheme)}/>:<ImSun onClick={()=>toggleTheme(theme, setTheme)}/>}
