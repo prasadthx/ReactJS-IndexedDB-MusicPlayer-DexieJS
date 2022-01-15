@@ -1,8 +1,8 @@
 import React, {useEffect, useRef, useState} from "react";
 import {FaPause, FaPlay} from "react-icons/fa";
 import './Player.css';
-import {HiVolumeUp} from "react-icons/hi";
 import {ImVolumeDecrease, ImVolumeIncrease} from "react-icons/im";
+import image from '../assets/image.jpg'
 
 const Player = ({audioFile, metadata, db} : any) => {
     const audioPlayer = useRef<HTMLAudioElement>(null);
@@ -63,7 +63,7 @@ const Player = ({audioFile, metadata, db} : any) => {
     return (
         <div className={"w-full h-full flex justify-center items-center flex-col dark:text-white"}>
             <div className={"w-4/5 md:w-1/5"}>
-                <img src={getImage(metadata.picture)} className={"rounded-full mx-auto"}/>
+                <img src={metadata.picture !== undefined ? getImage(metadata.picture) : image} className={"rounded-full mx-auto"}/>
             </div>
             <div className={"text-2xl font-bold my-8 mt-12 md:my-12"}>
                 {metadata.title}
@@ -94,8 +94,8 @@ const Player = ({audioFile, metadata, db} : any) => {
                     </div>
                 </div>
             </div>
-            <div className="flex justify-center items-center">
-                <button className={"bg-red-700 p-2 rounded-full mt-3"} onClick={() => db.table('audio').clear()}>
+            <div className="flex justify-center items-center text-white">
+                <button className={"bg-red-700 p-2 rounded-full mt-3"} onClick={() => {db.table('audio').clear(); db.table('file').clear()}}>
                     Clear Song
                 </button>
             </div>
