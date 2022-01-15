@@ -82,7 +82,7 @@ const Main = () => {
                 </div>
                 <div>
                     {isFilePicked.length > 0 ? (
-                        <div>Loading...</div>
+                        <div className={"dark:text-white"}>Loading...</div>
                     ) : (
                         <label className={"bg-blue-500 rounded-md p-2 flex items-center font-bold cursor-pointer"}>
                             <input type={"file"} className={"hidden"} name="file" accept=".mp3, .ogg, .wav" onChange={changeHandler} />

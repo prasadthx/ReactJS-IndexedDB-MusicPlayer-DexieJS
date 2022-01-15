@@ -65,7 +65,7 @@ const Player = ({audioFile, metadata, db} : any) => {
             <div className={"w-4/5 md:w-1/5"}>
                 <img src={metadata.picture !== undefined ? getImage(metadata.picture) : image} className={"rounded-full mx-auto"}/>
             </div>
-            <div className={"text-2xl font-bold my-8 mt-12 md:my-12"}>
+            <div className={"text-2xl font-bold my-8 mt-12 md:my-12 text-center"}>
                 {metadata.title}
             </div>
             <div className={"audio p-4"}>
